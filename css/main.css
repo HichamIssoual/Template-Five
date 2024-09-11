@@ -50,12 +50,14 @@ body {
 header {
     display: flex;
     justify-content: center;
+    position: sticky;
+    top: 0px;
+    background-color: var(--fourth-color);
 }
 header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: fixed;
     padding: 10px;
     border-bottom-right-radius: initial;
 }
@@ -136,12 +138,14 @@ header .container .links ul li {
     padding: 5px 0;
 }
 @media (min-width:0px) and (max-width:768px) {
+    header {
+        position: initial;
+    }
     header .container {
         flex-direction: column;
         width: 100%;
         gap: 20px;
         border-radius: 0px;
-        position: initial;
         background-color: var(--main-color);
     }
     header .container .links {
@@ -320,5 +324,120 @@ header .container .links ul li {
 }
 /* end design titles */
 /* Start About section */
-
+.container .container-about {
+    display: flex;
+    justify-content: space-between;
+}
+.container .container-about .features-about {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px 0;
+    align-content: flex-start;
+    flex-wrap: wrap;
+    width:40%;
+}
+.container .container-about .features-about div {
+    width: 45%;
+    height: fit-content;
+    padding: 20px 25px;
+    text-align: center;
+    box-shadow: 0 0 15px 2px var(--fourth-color);
+    border-radius: 10px;
+}
+.container .container-about .features-about div h4 {
+    margin-bottom: 5px;
+}
+.container .container-about .about-image {
+    width: 55%;
+}
+.container .container-about .about-image img{
+    max-width: 100%;
+}
+.free-trial button {
+    padding: 15px 10px;
+    background-color: var(--main-color);
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 25px;
+    color: white;
+    transition: 0.5s;
+}
+.free-trial button:hover {
+    background-color: #fc2b4ec7;
+}
+.free-trial p {
+    opacity: 0.6;
+}
+@media (min-width:0) and (max-width:768px) {
+    .container .container-about {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .container .container-about .features-about,
+    .container .container-about .about-image {
+        width: 100%;
+    }
+}
 /* End About section */
+/* Start Services Section */
+.container .services-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px 0px;
+    align-items: center;
+    text-align: center;
+}
+.container .services-container .service {
+    width: calc((100% - 8%) / 3);
+    background-color: var(--fourth-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px ;
+    padding: 40px;
+    position: relative;
+}
+@media (min-width:0px) and (max-width:768px) {
+    .container .services-container {
+        justify-content: center;
+    }
+    .container .services-container .service {
+        width: 90%;
+    }
+}
+@media (min-width:769px) and (max-width:1003px) {
+    .container .services-container {
+        justify-content: center;
+        gap: 50px 30px;
+    }
+    .container .services-container .service {
+        width: calc((100% - 20%) / 2);
+    }
+}
+.container .services-container .service i {
+    color: white;
+    background-color: var(--main-color);
+    padding: 15px;
+    font-size: 40px;
+    border-radius: 100%;
+    position: absolute;
+    top: -45px;
+    right: -25px;
+}
+.container .services-container .service button {
+    padding: 10px;
+    background-color: transparent;
+    border: 2px solid black;
+    outline: none;
+    cursor: pointer;
+    transition: 0.4s;
+    border-radius: 10px;
+}
+.container .services-container .service button:hover {
+    background-color: var(--third-color);
+    color: white;
+}
+/* End Services Section */
