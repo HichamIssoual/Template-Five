@@ -146,14 +146,14 @@ header .container .links ul li {
     }
     header .container .links {
         flex-direction: column;
-        gap: 20px;
         align-items: center;
+        gap: 20px 10px;
     }
     header .container .links ul {
         right: initial;
         top: initial;
         width: 100%;
-        bottom: 43px;
+        bottom: -197px;
     }
 }
 @media (min-width:769px) and (max-width:992px){
@@ -173,7 +173,14 @@ header .container .links ul li {
     display: flex;
     margin-top: 160px;
     justify-content: space-between;
-    align-items: center;
+    animation-name: down;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+}
+@keyframes down {
+    0% {
+        transform: translateY(-100%);
+    }
 }
 .landing .container .text {
     width: 45%;
@@ -239,11 +246,79 @@ header .container .links ul li {
     }
     .landing .container {
         flex-direction: column;
-        justify-content: flex-start;
+        align-items: center;
+        animation-name: none;
         gap: 20px;
+        margin-top: 200px;
     }
     .landing .container form {
         width: 100%;
     }
 }
 /* End Landing Page */
+/* Start design titles */
+.titles .container {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+}
+.titles .container h1 {
+    padding: 10px;
+    border: 2px solid var(--main-background-color);
+    transition: 1s;
+    position: relative;
+}
+.titles .container p {
+    width: 30px;
+    height: 30px;
+    background-color: var(--main-color);
+    border-radius: 50%;
+    pointer-events: none;
+    transition: 0.4s;
+    z-index: -1;
+}
+.titles .container h1::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    width: 30px;
+    height: 30px;
+    left: 0;
+    background-color: var(--main-color);
+    border-radius: 50%;
+    transform: translate(-53px,-50%);
+    transition: 0.8s;
+    z-index: -1;
+}
+.titles .container h1::after {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    top: 50%;
+    width: 30px;
+    height: 30px;
+    right: 0;
+    background-color: var(--main-color);
+    border-radius: 50%;
+    transition: .8s;
+    transform: translate(53px,-50%);
+}
+.titles .container h1:hover::before,
+.titles .container h1:hover::after {
+    transform: translate( 0px,-50%);
+}
+.titles .container h1:hover {
+    background-color: var(--main-color);
+    color: white;
+}
+.titles .container h1:hover + p {
+    transform: translateX(-50px);
+}
+/* end design titles */
+/* Start About section */
+
+/* End About section */
