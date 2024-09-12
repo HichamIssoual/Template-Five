@@ -16,6 +16,9 @@
     --fourth-color: #eee;
     --main-background-color: #000;
 }
+html {
+    scroll-behavior: smooth;
+}
 *::selection {
     background-color: var(--main-color);
     color: white;
@@ -48,12 +51,7 @@ body {
 /* End Container */
 /* Start Header */
 header {
-    display: flex;
-    justify-content: center;
-    position: sticky;
-    top: 0px;
     background-color: var(--fourth-color);
-    z-index: 20;
 }
 header .container {
     display: flex;
@@ -579,3 +577,91 @@ header .container .links ul li {
     }
 }
 /* End Features Section */
+/* Start Pricing Section */
+.container .pricing-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+.container .pricing-container .plan {
+    padding: 15px;
+    background-color: var(--fourth-color);
+    border-radius: 15px;
+    width: 30%;
+    flex-direction: column;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+}
+@media (min-width:627px) and (max-width:992px) {
+    .container .pricing-container .plan {
+        width: 33%;
+    }
+}
+@media (min-width:0px) and (max-width:626px) {
+    .container .pricing-container {
+        justify-content: center;
+    }
+    .container .pricing-container .plan {
+        width: 90%;
+    }
+}
+.container .pricing-container .plan .basic-feature {
+    align-self: flex-start;
+    width: 100%;
+}
+.container .pricing-container .plan .basic-feature .aviable-feature {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.container .pricing-container .plan .basic-feature .aviable-feature div {
+    display: flex;
+    gap: 20px;
+    border-bottom: 2px solid var(--second-color);
+    padding-bottom: 20px;
+    font-weight: 600;
+}
+.container .pricing-container .plan .basic-feature .aviable-feature div i {
+    font-size: 20px;
+}
+.container .pricing-container .plan .basic-feature .aviable-feature div .fa-check {
+    color: #00ad5c;
+}
+.container .pricing-container .plan .basic-feature .aviable-feature div .fa-xmark {
+    color: red;
+}
+.container .pricing-container .basic {
+    background-color: var(--second-color);
+    color: white;
+}
+.container .pricing-container .basic .basic-feature .aviable-feature div {
+    border-color: white;
+}
+.container .pricing-container .pro {
+    background-color: var(--main-color);
+}
+.container .pricing-container .pro .basic-feature .aviable-feature div .fa-check {
+    color: white;
+}
+.container .pricing-container .pro .basic-feature .aviable-feature div .fa-xmark {
+    color: black;
+}
+.container .pricing-container .platinum {
+    background-color: var(--third-color);
+}
+.container .pricing-container .platinum .basic-feature .aviable-feature div .fa-check {
+    color: white;
+}
+.container .pricing-container .plan h2 {
+    color: black;
+    width: 150px;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: var(--fourth-color);
+    border-radius: 10px;
+}
+/* End Pricing Section */
