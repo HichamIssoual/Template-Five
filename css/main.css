@@ -540,3 +540,42 @@ header .container .links ul li {
     }
 }
 /* End Portfolio Section */
+/* Start Features Section */
+.container .features-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.container .features-container .feature {
+    width: calc((100% - 60px) / 3);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+    line-height: 1.6;
+    background-color: var(--fourth-color);
+    border-radius: 10px;
+}
+.container .features-container .feature h4 {
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+.container .features-container .feature .img-feature img {
+    width: 40px;
+}
+@media (min-width:769px) and (max-width:992px) {
+    .container .features-container .feature {
+        width: calc((100% - 60px) / 2);
+    }
+}
+@media (min-width:0px) and (max-width:768px) {
+    .container .features-container {
+        justify-content: center;
+    }
+    .container .features-container .feature {
+        width: 90%;
+    }
+}
+/* End Features Section */
